@@ -1,0 +1,67 @@
+// Variables
+$gradient-start-color: #2a2a2a;
+$headbar-bg-color: #1d1f23;
+$headbar-link-color: white;
+$headbar-link-hover-color: #ddd;
+$profile-color: #fcfcfc; // For profile link highlighting (optional)
+
+// Headbar styling
+.headBar {
+    background: radial-gradient( circle at 80% 20%,$headbar-bg-color, $gradient-start-color) ;
+    padding: 10px 20px;
+    color: $headbar-link-color;
+    display: flex;
+    align-items: center;
+
+    .d-flex {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .kfupm-logo {
+        height: 60px; // Adjust size as needed
+        margin-right: 20px;
+        &:hover{
+            cursor: pointer;
+        }
+
+    }
+
+    .headbar-link {
+        color: $headbar-link-color;
+        margin-right: 15px;
+        text-decoration: none;
+        padding: 8px 16px;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $headbar-link-hover-color;
+        }
+    }
+
+    .profile-link {
+        color: $profile-color;
+        font-weight: bold;
+        margin-left: auto;
+        cursor: pointer;
+    }
+}
+
+// Responsive layout
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .headbar-link {
+            margin-bottom: 10px;
+        }
+
+        .profile-link {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+}
+

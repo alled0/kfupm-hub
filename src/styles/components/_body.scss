@@ -1,0 +1,292 @@
+.body {
+  & > h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    margin-bottom: 20px;
+
+    div {
+      display: flex;
+      flex-direction: row;
+      margin: 15px 0 0 0;
+      gap: 10px;
+    }
+
+    h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .filterb {
+      padding: 2px 8px;
+      margin: 0;
+      background-color: #545f66;
+      border: none;
+
+      &:hover {
+        background-color: #0a58ca;
+      }
+    }
+
+    .active {
+      background-color: #0a58ca;
+    }
+  }
+
+  .wid-row {
+    margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+      &.reverse {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  .sports-box {
+    background-color: #292e33;
+    margin: 0;
+    border-radius: 10px;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+
+    .sport-col {
+      > a {
+        &:hover {
+          > div {
+            background-color: #4173ee;
+          }
+        }
+        text-decoration: none;
+        > div {
+          background-color: #545f66;
+          border-radius: 10px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          transition: 0.3s;
+
+          .deteils {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            span {
+              background-color: #3a4449;
+              border-radius: 5px;
+              padding: 2px 7px;
+              font-size: 13px;
+              margin-bottom: 7px;
+            }
+          }
+
+          h3 {
+            background-color: transparent;
+            margin: 15px auto;
+          }
+        }
+      }
+    }
+  }
+
+  .news-box {
+    background-color: #292e33;
+    margin: 0;
+    border-radius: 10px;
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+
+    .news-col {
+      > a {
+        &:hover {
+          > div {
+            background-color: #2a4d93;
+          }
+        }
+        text-decoration: none;
+        > div {
+          background-color: #545f66;
+          border-radius: 10px;
+          color: white;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          transition: 0.3s;
+
+          @media (max-width: 576px) {
+            flex-direction: column;
+
+            .img {
+              margin-top: 10px;
+            }
+
+            .deteils {
+              text-align: center;
+              .text p {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          .img {
+            max-width: 100%;
+            height: 100px;
+            padding: 5px 5px 5px 10px;
+            border-radius: 15px;
+          }
+
+          .deteils {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+
+            .text {
+              h3 {
+                background-color: transparent;
+                margin: 0;
+                font-size: 15px;
+              }
+
+              p {
+                font-size: 15px;
+                color: #1f2327;
+                word-break: break-word;
+              }
+            }
+
+            .form .join {
+              font-size: 10px;
+              padding: 3px 8px;
+              background-color: #1f2327;
+              border: none;
+              &:hover {
+                background-color: #2a4d93;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wid-colum {
+    background-color: #292e33;
+    border-radius: 10px;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .reserv-card {
+    background-color: #545f66;
+  }
+
+  .sports {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-between;
+      align-items: center;
+
+      &.focus a {
+        .img {
+          border: 4px #029c2d solid;
+          background-color: red;
+        }
+      }
+
+      a {
+        .img {
+          max-width: 100%;
+          width: 70px;
+          border-radius: 50%;
+          border: 3px black solid;
+          transition: 0.3s;
+
+          &:hover {
+            border: 4px #4173ee solid;
+          }
+        }
+      }
+
+      span {
+        color: white;
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+
+
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$unavailable-color: #343a40;
+$font-color-light: #ffffff;
+$font-color-muted: #6c757d;
+
+// Common styles
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Two columns
+  gap: 10px; // Space between buttons
+
+  .grid-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px; // Set a minimum width for uniformity
+  }
+}
+
+// Time slots grid styling
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Four columns
+  gap: 10px;
+
+  .time-slot-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    text-align: center;
+
+    // Modifier for selected state
+    &.time-slot-selected {
+      background-color: $primary-color;
+      color: $font-color-light;
+      border-color: $primary-color;
+    }
+
+    // Modifier for available state
+    &.time-slot-available {
+      background-color: $secondary-color;
+      color: $font-color-light;
+      border-color: $secondary-color;
+    }
+
+    // Modifier for unavailable state
+    &.time-slot-unavailable {
+      background-color: $unavailable-color;
+      color: $font-color-muted; // Lighter text color for contrast
+      border-color: $unavailable-color;
+      pointer-events: none; // Disable click for unavailable slots
+    }
+  }
+}
